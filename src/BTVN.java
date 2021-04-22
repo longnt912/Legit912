@@ -6,45 +6,38 @@ import java.util.Scanner;
 public class BTVN {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Nhap a: ");
-        int a = scanner.nextInt();
-        System.out.println("Nhap b: ");
-        int b = scanner.nextInt();
-        int max = 0;
-        if (b ==0  ) {
-            System.out.println(" UCLN la: " + a);
-            System.out.println("UCNN la: " +  b);
-        }else if(a==0 ){
-            System.out.println("UCLN la: " + b);
-            System.out.println(" UCNN la: " +a);
-        } else if (a > b) {
-            for (int i = 1; i <= b; i++) {
-                if (a % i == 0 && b % i == 0) {
-                    if (max < i)
-                        max = i;
-                }
+        int a, b;
+        int gcd, lcm, Du, n1, n2;
+        System.out.println("Enter two Numbers: ");
+        a = scanner.nextInt();
+        b = scanner.nextInt();
+        try {
+            if (a > b) {
+                n1 = a;
+                n2 = b;
+            } else{
+                n1 = b;
+                n2 = a;
             }
-        } else if (a == b) {
-            for (int i = 1; i <= a; i++) {
-                if (a % i == 0 && b % i == 0)
-                    if (max < i)
-                        max = i;
+            Du = n1 % n2;
+            while (Du != 0) {
+                n1 = n2;
+                n2 = Du;
+                Du = n1 % n2;
             }
-        } else {
-            for (int i = 1; i <= a; i++) {
-                if (a % i == 0 && b % i == 0) {
-                    if (max < i)
-                        max = i;
-                }
-            }
-        System.out.println(" UCLN la:" + max);
-        System.out.println("UCNN la: " + (a * b) / max);
+            gcd = n2;
+            lcm = a * b / gcd;
+            System.out.println("GCD of " + a + " and " + b + " = " + gcd);
+            System.out.println("LCM of " + a + " and " + b + " = " + lcm);
+        }catch (ArithmeticException e) {
+            System.out.println ("UCLN & UCNN = 0");
         }
-
         // BAI 2
 
-
-        int[] danhsach = new int[3];
+        int n;
+        System.out.println("Nhap vao N so: ");
+        n =scanner.nextInt();
+        int[] danhsach = new int[n];
         int i;
         for (i = 0; i < danhsach.length; i++) {
             System.out.println("Nhap vao phan tu thu " + (i + 1) + ":");
@@ -62,13 +55,13 @@ public class BTVN {
         // BAI 3
 
 
-    int j, SoNhap, Sum = 0 ;
+        int j, SoNhap, Sum = 0 ;
         System.out.println("\n Hay nhap 1 so la: ");
-    SoNhap = scanner.nextInt();
+        SoNhap = scanner.nextInt();
 
         for(j = 1 ; j < SoNhap ; j++) {
-        if(SoNhap % j == 0)  {
-            Sum = Sum + j;
+            if(SoNhap % j == 0)  {
+                Sum = Sum + j;
         }
     }
         if (Sum == SoNhap) {
