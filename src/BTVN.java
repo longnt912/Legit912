@@ -11,8 +11,12 @@ public class BTVN {
         System.out.println("Nhap b: ");
         int b = scanner.nextInt();
         int max = 0;
-        if (a == 0 || b == 0) {
-            System.out.println(" Sai input");
+        if (b ==0  ) {
+            System.out.println(" UCLN la: " + a);
+            System.out.println("UCNN la: " +  b);
+        }else if(a==0 ){
+            System.out.println("UCLN la: " + b);
+            System.out.println(" UCNN la: " +a);
         } else if (a > b) {
             for (int i = 1; i <= b; i++) {
                 if (a % i == 0 && b % i == 0) {
