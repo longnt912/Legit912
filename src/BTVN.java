@@ -63,11 +63,11 @@ public class BTVN {
             if(SoNhap >= Math.pow(10,9)){
                 System.out.println(" Qua so cho phep");
             }
-            for (j = 1; j < SoNhap; j++) {
-                if (SoNhap % j == 0) {
-                    Sum = Sum + j;
+                for (j = 1; j < SoNhap; j++) {
+                    if (SoNhap % j == 0) {
+                        Sum = Sum + j;
+                    }
                 }
-            }
             if (Sum == SoNhap) {
                 System.out.format("\n %d la so hoan hao", SoNhap);
             } else {
