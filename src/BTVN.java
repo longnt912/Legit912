@@ -31,7 +31,13 @@ public class BTVN {
             System.out.println("\n Nhap vao 2 so: ");
             a = scanner.nextInt();
             b = scanner.nextInt();
-            try {
+                if (a == 0) {
+                    System.out.println("GCD of " + a + " and " + b + " = " + b);
+                    System.out.println("LCM of " + a + " and " + b + " = " + a);
+                }else if (b == 0){
+                    System.out.println("GCD of " + a + " and " + b + " = " + a);
+                    System.out.println("LCM of " + a + " and " + b + " = " + b);
+                }
                 if (a > b) {
                     n1 = a;
                     n2 = b;
@@ -49,9 +55,6 @@ public class BTVN {
                 lcm = a * b / gcd;
                 System.out.println("GCD of " + a + " and " + b + " = " + gcd);
                 System.out.println("LCM of " + a + " and " + b + " = " + lcm);
-            } catch (ArithmeticException e) {
-                System.out.println("UCLN & UCNN = 0");
-            }
 
 
             // BAI 3
